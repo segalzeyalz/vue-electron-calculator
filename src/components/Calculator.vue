@@ -1,14 +1,19 @@
 <template>
-  <div class="hello">
-    <h1>{{ title }}</h1>
+  <div class="calculator-container">
+    <input class="display"/>
+    <CalculatorButtons />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import CalculatorButtons from '@/components/CalculatorButtons.vue'; // @ is an alias to /src
 
 export default defineComponent({
   name: 'Calculator',
+  components: {
+    CalculatorButtons,
+  },
   props: {
     title: String,
   },
@@ -17,21 +22,18 @@ export default defineComponent({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  h3 {
-    margin: 40px 0 0;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-
-  a {
-    color: #42b983;
-  }
+  .calculator-container {
+  background-color: gray;
+  height: 400px;
+  width: 60vmax;
+  margin: auto;
+}
+  .display {
+  margin-top: 10px;
+  background-color: black;
+  width: 50vmax;
+  height: 3em;
+  color: white;
+  font-weight: bold;
+}
 </style>
